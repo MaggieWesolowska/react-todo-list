@@ -18,17 +18,15 @@ const Task = props => {
           </strong>
         </h4>
         <div>
-          {text ? (
-            <p>
-              <span>until: {date} </span>
-              <button onClick={() => props.change(id)}>
-                DONE
-              </button>
-              <button onClick={() => props.delete(id)}>
-                X
-              </button>
-            </p>
-          ) : null}
+          <p>
+            <span>until: {date} </span>
+            <button onClick={() => props.change(id)}>
+              DONE
+            </button>
+            <button onClick={() => props.delete(id)}>
+              X
+            </button>
+          </p>
         </div>
       </div>
     );
