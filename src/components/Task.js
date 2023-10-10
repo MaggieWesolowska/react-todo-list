@@ -11,24 +11,26 @@ const Task = props => {
 
   if (active) {
     return (
-      <div className='task'>
-        <h4>
-          <strong style={important ? style : null}>
-            {text}
-          </strong>
-        </h4>
-        <div>
-          <p>
-            <span>until: {date} </span>
-            <button onClick={() => props.change(id)}>
-              DONE
-            </button>
-            <button onClick={() => props.delete(id)}>
-              X
-            </button>
-          </p>
+      text && (
+        <div className='task'>
+          <h4>
+            <strong style={important ? style : null}>
+              {text}
+            </strong>
+          </h4>
+          <div>
+            <p>
+              <span>until: {date} </span>
+              <button onClick={() => props.change(id)}>
+                DONE
+              </button>
+              <button onClick={() => props.delete(id)}>
+                X
+              </button>
+            </p>
+          </div>
         </div>
-      </div>
+      )
     );
   } else {
     const finish = new Date(
